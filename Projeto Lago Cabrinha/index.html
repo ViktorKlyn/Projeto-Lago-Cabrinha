@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto Lago Cabrinha</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="hero">
+        <div class="overlay">
+            <h1>Projeto Lago Cabrinha</h1>
+            <p>Transformando a Zona Norte de Londrina através da cultura e do meio ambiente</p>
+            <a href="#galeria" class="btn">Ver Galeria</a>
+        </div>
+    </header>
+
+    <main>
+
+        <section class="sobre">
+            <h2>Sobre o Projeto</h2>
+            <p>
+                O Projeto Lago Cabrinha tem como missão revitalizar um dos espaços mais importantes da Zona Norte de
+                Londrina,
+                promovendo ações ambientais, culturais e sociais que impactam diretamente a comunidade local.
+            </p>
+
+            <div class="cards">
+                <div class="card">
+                    <h3>🌱 Sustentabilidade</h3>
+                    <p>Iniciativas para preservar o meio ambiente e recuperar áreas naturais.</p>
+                </div>
+
+                <div class="card">
+                    <h3>🎭 Cultura</h3>
+                    <p>Eventos e atividades que incentivam a arte e a expressão cultural.</p>
+                </div>
+
+                <div class="card">
+                    <h3>🤝 Comunidade</h3>
+                    <p>Integração social e fortalecimento dos moradores da região.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="carrossel" id="galeria">
+            <h2>Galeria</h2>
+            <p>Registros reais das ações e transformações no local</p>
+
+            <div class="slider">
+                <div class="slides">
+
+                    <!-- mantém suas imagens -->
+                     <img src="./Imagens/fotos_do_projeto/WhatsApp Image 2026-04-12 at 20.33.02.jpeg" alt="">
+                    <img src="./Imagens/fotos_do_projeto/WhatsApp Image 2026-04-02 at 15.10.07.jpeg">
+                    <img src="./Imagens/fotos_do_projeto/WhatsApp Image 2026-04-02 at 15.10.27.jpeg">
+                    <img src="./Imagens/fotos_do_projeto/WhatsApp Image 2026-04-02 at 15.13.07.jpeg">
+                    <img src="./Imagens/fotos_do_projeto/WhatsApp Image 2026-04-02 at 15.13.22.jpeg">
+                    <img src="./Imagens/fotos_do_projeto/WhatsApp Image 2026-04-02 at 15.30.47.jpeg">
+                    <img src="./Imagens/fotos_do_projeto/WhatsApp Image 2026-04-02 at 15.30.48 (1).jpeg">
+                    <img src="./Imagens/fotos_do_projeto/WhatsApp Image 2026-04-02 at 15.30.48 (2).jpeg">
+                    <img src="./Imagens/fotos_do_projeto/WhatsApp Image 2026-04-02 at 15.30.48 (3).jpeg">
+                    <img src="./Imagens/fotos_do_projeto/WhatsApp Image 2026-04-02 at 15.30.48.jpeg">
+                    <img src="./Imagens/fotos_do_projeto/WhatsApp Image 2026-04-02 at 15.30.49.jpeg">
+                    <img src="./Imagens/fotos_do_projeto/WhatsApp Image 2026-04-02 at 15.50.31.jpeg">
+                    <img src="./Imagens/fotos_do_projeto/WhatsApp Image 2026-04-02 at 15.50.32.jpeg">
+                    <img src="./Imagens/fotos_do_projeto/WhatsApp Image 2026-04-02 at 15.50.51.jpeg">
+                    <img src="./Imagens/fotos_do_projeto/WhatsApp Image 2026-04-09 at 18.40.18 (1).jpeg">
+                    <img src="./Imagens/fotos_do_projeto/WhatsApp Image 2026-04-09 at 18.40.18.jpeg">
+                    <img src="./Imagens/fotos_do_projeto/WhatsApp Image 2026-04-09 at 18.40.19.jpeg">
+                    <img src="./Imagens/fotos_do_projeto/WhatsApp Image 2026-04-09 at 18.40.20 (1).jpeg">
+                    <img src="./Imagens/fotos_do_projeto/WhatsApp Image 2026-04-09 at 18.40.20 (2).jpeg">
+                    <img src="./Imagens/fotos_do_projeto/WhatsApp Image 2026-04-09 at 18.40.20.jpeg">
+                    <img src="./Imagens/fotos_do_projeto/WhatsApp Image 2026-04-09 at 18.40.21 (1).jpeg">
+                    <img src="./Imagens/fotos_do_projeto/WhatsApp Image 2026-04-09 at 18.40.21.jpeg">
+
+                </div>
+
+                <button class="prev">&#10094;</button>
+                <button class="next">&#10095;</button>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2026 Projeto Lago Cabrinha • Desenvolvido por João Victor</p>
+    </footer>
+
+    <script>
+        const slides = document.querySelector('.slides');
+        const images = document.querySelectorAll('.slides img');
+        let index = 0;
+
+        function updateSlide() {
+            const width = document.querySelector('.slider').clientWidth;
+            slides.style.transform = `translateX(${-index * width}px)`;
+        }
+
+        document.querySelector('.next').addEventListener('click', () => {
+            index = (index + 1) % images.length;
+            updateSlide();
+        });
+
+        document.querySelector('.prev').addEventListener('click', () => {
+            index = (index - 1 + images.length) % images.length;
+            updateSlide();
+        });
+
+        window.addEventListener('resize', updateSlide);
+    </script>
+
+</body>
+
+</html>
